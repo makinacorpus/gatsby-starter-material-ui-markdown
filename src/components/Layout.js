@@ -34,9 +34,7 @@ const Layout = ({ className, title = '', ...rest }) => {
         {...rest}
       />
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 };
