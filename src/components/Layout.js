@@ -8,6 +8,14 @@ import { Container } from '@material-ui/core';
 import Footer from './Footer';
 
 const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    '& > :last-child': {
+      marginTop: 'auto',
+    },
+  },
   main: {
     marginTop: '2rem',
     marginBottom: '2rem',
@@ -18,7 +26,7 @@ const Layout = ({ className, title = '', ...rest }) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.root}>
       <Helmet
         htmlAttributes={{ lang: 'fr' }}
         title={title}
@@ -35,7 +43,7 @@ const Layout = ({ className, title = '', ...rest }) => {
       />
 
       <Footer />
-    </>
+    </div>
   );
 };
 
