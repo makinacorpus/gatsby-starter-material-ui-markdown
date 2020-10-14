@@ -1,5 +1,6 @@
 import React from 'react';
 import useBlocks from '../hooks/useBlocks';
+import MarkdownText from './MarkdownText';
 
 const MDBlock = ({ block, ...props }) => {
   const { [block]: selectedBlock } = useBlocks();
@@ -13,8 +14,7 @@ const MDBlock = ({ block, ...props }) => {
   }
 
   return (
-    // eslint-disable-next-line react/no-danger
-    <div dangerouslySetInnerHTML={{ __html: selectedBlock.html }} {...props} />
+    <MarkdownText hast={selectedBlock.htmlAst} />
   );
 };
 

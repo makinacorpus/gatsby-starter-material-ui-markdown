@@ -5,7 +5,7 @@ export const useBlocks = () => {
     query {
       wrapper: allFile(filter: {sourceInstanceName: {eq: "markdown-blocks"}}) {
         nodes {
-          childMarkdownRemark { html }
+          childMarkdownRemark { htmlAst }
           name
           relativeDirectory
         }
